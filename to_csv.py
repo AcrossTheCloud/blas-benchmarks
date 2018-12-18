@@ -29,8 +29,6 @@ for root, dirs, files in os.walk('.'):
               results[benchmarks[benchmark_idx % 4]][machine_type] = [s]
             benchmark_idx += 1
 
-print(results)
-
 with open('results.csv', 'w') as results_file:
   results_writer = csv.writer(results_file, delimiter=',')
   results_writer.writerow(['']+list(results[benchmarks[0]]))
